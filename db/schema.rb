@@ -10,20 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_707_102_924) do
-  create_table 'barbers', force: :cascade do |t|
-    t.text 'name'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+ActiveRecord::Schema[7.0].define(version: 2023_07_08_114655) do
+  create_table "barbers", force: :cascade do |t|
+    t.text "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'client', force: :cascade do |t|
-    t.text 'name'
-    t.text 'phone'
-    t.text 'datestamp'
-    t.text 'barber'
-    t.text 'color'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "clients", force: :cascade do |t|
+    t.text "name"
+    t.text "phone"
+    t.text "datestamp"
+    t.text "barber"
+    t.text "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  create_table "contacts", force: :cascade do |t|
+    t.text "email"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end

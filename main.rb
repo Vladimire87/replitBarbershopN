@@ -15,8 +15,15 @@ end
 class Barber < ActiveRecord::Base
 end
 
+class Contact < ActiveRecord::Base
+end
+
 before do
   @barbers = Barber.all
+end
+
+def errors_show(hash)
+  @error = hash.select { |key, _| params[key] == '' }.values.join(', ')
 end
 
 get '/' do
@@ -46,5 +53,27 @@ post '/appointment' do
 
   return erb :appointment if @error != ''
 
-  erb "Спасибо за запись! Username: #{@username}, Phone: #{@tel}, Date: #{@date}, Barber: #{@barber}, Color: #{@color}"
+  appointment_create = Client.create(name: @username, phone: @tel, datestamp: @date, barber: @barber, color: @color)
+end
+
+get '/contacts' do
+  erb :contacts
+end
+
+post '/contacts' do
+  email = params[:email]
+  message = params[:message]
+
+  hh = {
+    email: 'Введите Имейл',
+    message: 'Введите Сообщение'
+  }
+
+  errors_show(hh)
+
+  return erb :contacts if @error != ''
+
+  contact_create = Contact.create(email: email, message: message)
+
+  erb 'Thank you!'
 end
