@@ -1,4 +1,4 @@
-  <h3>Appointment:</h2>
+   <h3>Appointment:</h2>
 <script type="text/javascript">
   $(function(){
     $('#color').simplecolorpicker();
@@ -8,19 +8,19 @@
 <form action="/appointment" method="post">
   <div class="form-group">
     <label for="username">Ваше Имя:</label>
-    <input type="text"  name="username" class="form-control" placeholder="Ваше Имя" value="<%= @username %>">
+    <input type="text"  name="client[name]" class="form-control" placeholder="Ваше Имя" value="<%= @username %>">
   </div>
   <div class="form-group">
     <label for="tel">Ваш Телефон:</label>
-    <input type="tel"  name="tel" class="form-control" placeholder="Телефон" value="<%= @tel %>">
+    <input type="tel"  name="client[phone]" class="form-control" placeholder="Телефон" value="<%= @tel %>">
   </div>
   <div class="form-group">
     <label for="date">Дата:</label>
-    <input id="datetimepicker" type="text"  name="date" class="form-control" placeholder="Дата" value="<%= @date %>">
+    <input id="datetimepicker" type="text"  name="client[datestamp]" class="form-control" placeholder="Дата" value="<%= @date %>">
   </div>
   <div class="form-group">
     <label for="pet-select">Выберите Барбера:</label>
-    <select id="aaa" name="barber" class="form-control" >
+    <select id="aaa" name="client[barber]" class="form-control" >
       <option value="">--Please choose an option--</option>
       <% @barbers.each do |barber| %>
         <option value="<%= barber.name %>" <%= barber.name == @barber ? 'selected' : '' %>>
@@ -31,7 +31,7 @@
     </div>
     <div class="form-group">
       <label for="color">Выберите Цвет:</label><br>
-      <select id="color" name="color" class="form-control">
+      <select id="color" name="client[color]" class="form-control">
         <option value="#7bd148">Green</option>
         <option value="#5484ed">Bold blue</option>
         <option value="#a4bdfc">Blue</option>

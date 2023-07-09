@@ -10,6 +10,11 @@ set :port, 8080
 set :database, { adapter: 'sqlite3', database: 'barbershop.db' }
 
 class Client < ActiveRecord::Base
+  validates :name, presence: true
+  validates :phone, presence: true
+  validates :datestamp, presence: true
+  validates :barber, presence: true
+  validates :color, presence: true
 end
 
 class Barber < ActiveRecord::Base
@@ -35,25 +40,10 @@ get '/appointment' do
 end
 
 post '/appointment' do
-  @username = params[:username]
-  @tel = params[:tel]
-  @date = params[:date]
-  @barber = params[:barber]
-  @color = params[:color]
-
-  hh = {
-    username: 'Введите Имя',
-    tel: 'Введите Телефон',
-    date: 'Введите Дату',
-    barber: 'Выберите Барбера',
-    color: 'Выберите цвет'
-  }
-
-  errors_show(hh)
-
-  return erb :appointment if @error != ''
-
-  appointment_create = Client.create(name: @username, phone: @tel, datestamp: @date, barber: @barber, color: @color)
+  c = Client.new params[:client]
+  c.save
+  
+ erb "Thx"
 end
 
 get '/contacts' do
