@@ -1,0 +1,20 @@
+current directory: /Users/vlad/Projects/testhq/replitBarbershopN/.bundle/ruby/3.2.0/gems/bond-0.5.1/ext/readline_line_buffer
+/Users/vlad/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+
+current directory: /Users/vlad/Projects/testhq/replitBarbershopN/.bundle/ruby/3.2.0/gems/bond-0.5.1/ext/readline_line_buffer
+make DESTDIR\= sitearchdir\=./.gem.20230709-52733-y5be5c sitelibdir\=./.gem.20230709-52733-y5be5c clean
+make: *** No rule to make target `clean'.  Stop.
+
+current directory: /Users/vlad/Projects/testhq/replitBarbershopN/.bundle/ruby/3.2.0/gems/bond-0.5.1/ext/readline_line_buffer
+make DESTDIR\= sitearchdir\=./.gem.20230709-52733-y5be5c sitelibdir\=./.gem.20230709-52733-y5be5c
+echo "This is a dummy extension"
+This is a dummy extension
+
+current directory: /Users/vlad/Projects/testhq/replitBarbershopN/.bundle/ruby/3.2.0/gems/bond-0.5.1/ext/readline_line_buffer
+make DESTDIR\= sitearchdir\=./.gem.20230709-52733-y5be5c sitelibdir\=./.gem.20230709-52733-y5be5c install
+echo "This is a dummy extension"
+This is a dummy extension
+
+current directory: /Users/vlad/Projects/testhq/replitBarbershopN/.bundle/ruby/3.2.0/gems/bond-0.5.1/ext/readline_line_buffer
+make DESTDIR\= sitearchdir\=./.gem.20230709-52733-y5be5c sitelibdir\=./.gem.20230709-52733-y5be5c clean
+make: *** No rule to make target `clean'.  Stop.
