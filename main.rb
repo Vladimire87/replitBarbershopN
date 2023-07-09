@@ -41,9 +41,12 @@ end
 
 post '/appointment' do
   c = Client.new params[:client]
-  c.save
-  
- erb "Thx"
+  if c.save
+    erb "Appointment created!"
+  else
+    @error = c.errors.full_messages.first
+    erb :appointment
+  end
 end
 
 get '/contacts' do
