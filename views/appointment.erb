@@ -23,7 +23,7 @@
     <select id="aaa" name="client[barber]" class="form-control" >
       <option value="">--Please choose an option--</option>
       <% @barbers.each do |barber| %>
-        <option value="<%= barber.name %>" <%= barber.name == @barber ? 'selected' : '' %>>
+        <option value="<%= barber.name %>" <%= barber.name == @c.barber ? 'selected' : '' %>>
     <%= barber.name %>
   </option>
         <% end %>

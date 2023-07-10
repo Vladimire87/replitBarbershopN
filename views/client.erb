@@ -1,3 +1,8 @@
+<style>
+  .color{
+    background-color: <%= @client.color%>;
+  }
+</style>
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title"><%= @client.name%></h3>
@@ -6,5 +11,6 @@
     Date: <%= @client.datestamp%>
     Phone: <%= @client.phone%>
     Barber:  <%= @client.barber%>
+    Color: <span class="color"><%= @client.color%></span>
   </div>
 </div>
