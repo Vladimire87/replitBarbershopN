@@ -73,5 +73,6 @@ post '/contacts' do
 end
 
 get "/barber/:name" do
-erb :barber
+  @barber = Barber.find_by(name: params[:name])
+  erb :barber
 end
