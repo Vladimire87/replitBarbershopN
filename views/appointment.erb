@@ -8,15 +8,15 @@
 <form action="/appointment" method="post">
   <div class="form-group">
     <label for="username">Ваше Имя:</label>
-    <input type="text"  name="client[name]" class="form-control" placeholder="Ваше Имя" value="<%= @username %>">
+    <input type="text"  name="client[name]" class="form-control" placeholder="Ваше Имя" value="<%= @c.name %>">
   </div>
   <div class="form-group">
     <label for="tel">Ваш Телефон:</label>
-    <input type="tel"  name="client[phone]" class="form-control" placeholder="Телефон" value="<%= @tel %>">
+    <input type="tel"  name="client[phone]" class="form-control" placeholder="Телефон" value="<%= @c.phone %>">
   </div>
   <div class="form-group">
     <label for="date">Дата:</label>
-    <input id="datetimepicker" type="text"  name="client[datestamp]" class="form-control" placeholder="Дата" value="<%= @date %>">
+    <input id="datetimepicker" type="text"  name="client[datestamp]" class="form-control" placeholder="Дата" value="<%= @c.datestamp %>">
   </div>
   <div class="form-group">
     <label for="pet-select">Выберите Барбера:</label>
@@ -32,6 +32,7 @@
     <div class="form-group">
       <label for="color">Выберите Цвет:</label><br>
       <select id="color" name="client[color]" class="form-control">
+         <option value="">blank</option>
         <option value="#7bd148">Green</option>
         <option value="#5484ed">Bold blue</option>
         <option value="#a4bdfc">Blue</option>

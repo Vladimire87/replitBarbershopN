@@ -36,15 +36,16 @@ get '/' do
 end
 
 get '/appointment' do
+  @c = Client.new
   erb :appointment
 end
 
 post '/appointment' do
-  c = Client.new params[:client]
-  if c.save
+  @c = Client.new params[:client]
+  if @c.save
     erb "Appointment created!"
   else
-    @error = c.errors.full_messages.first
+    @error = @c.errors.full_messages.first
     erb :appointment
   end
 end
