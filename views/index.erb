@@ -1,1 +1,6 @@
-<h5>Hello master!</h5>
+<h4>Hello master!</h5>
+<% @barbers.each do |barber|%>
+  <p>
+    <a href="/barber/<%= barber.name%>"><%= barber.name %></a>
+  </p>
+<% end%>
