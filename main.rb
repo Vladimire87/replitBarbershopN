@@ -71,3 +71,7 @@ post '/contacts' do
 
   erb 'Thank you!'
 end
+
+get "/barber/:name" do
+erb :barber
+end
