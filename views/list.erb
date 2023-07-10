@@ -1,0 +1,8 @@
+<h3>Bookings Client list</h3>
+<% @clients.each do |c|%>
+  <ul class="list-group">
+    <li class="list-group-item">Client: <strong><%= c.name%></strong></li>
+    <li class="list-group-item">Date: <%= c.datestamp%></li>
+    <a href="/client/<%= c.id%>" type="button" class="btn btn-info">Go</a>
+  </ul>
+<%end%>

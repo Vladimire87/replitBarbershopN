@@ -76,3 +76,13 @@ get "/barber/:name" do
   @barber = Barber.find_by(name: params[:name])
   erb :barber
 end
+
+get "/list" do
+  @clients = Client.order("datestamp ASC")
+ erb :list
+end
+
+get "/client/:id" do
+  @client = Client.find(params[:id])
+  erb :client
+end
